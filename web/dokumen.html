@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bappelitbangda.demakkab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container mx-auto">
+        <header class="fixed inset-x-0 top-0 z-30 bg-white shadow-md">
+            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <div class="flex lg:flex-1 gap-x-2">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Bappelitbangda</span>
+                        <img class="h-12 w-auto" src="asset\demlog.png" alt="">
+                    </a>
+                    <div class="text-left">
+                        <h1 class="text-2xl font-bold ml-4">Bappelitbangda</h1>
+                        <p class="text-sm ml-4">Kabupaten Demak</p>
+                    </div>
+                </div>
+                
+                <div class="flex lg:hidden">
+                    <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="http://127.0.0.1:5500/web/web.html" class="text-sm font-semibold leading-6 text-gray-900">Beranda</a>
+                    <a href="http://127.0.0.1:5500/web/berita.html" class="text-sm font-semibold leading-6 text-gray-900">Berita</a>
+                    <a href="http://127.0.0.1:5500/web/profil.html" class="text-sm font-semibold leading-6 text-gray-900">Profile</a>
+                    <a href="http://127.0.0.1:5500/web/dokumen.html" class="text-sm font-semibold leading-6 text-gray-900">Dokumen</a>
+                    <a href="http://127.0.0.1:5500/web/ppid.html" class="text-sm font-semibold leading-6 text-gray-900">PPID</a>
+                    <a href="http://127.0.0.1:5500/web/panduan.html" class="text-sm font-semibold leading-6 text-gray-900">Panduan SIPD</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </nav>
+        </header>
+    </div>
+    
+  
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true" id="mobile-menu" style="display: none;">
+                <!-- Background Overlay -->
+                <div class="fixed inset-0 z-40 bg-black bg-opacity-50" onclick="toggleMenu()"></div>
+                
+                <!-- Mobile Menu -->
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Bappelitbangda</span>
+                            <img class="h-8 w-auto" src="asset/demlog.png" alt="">
+                        </a>
+                        <button type="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="toggleMenu()">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                            </div>
+                            <div class="py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Button to Open Mobile Menu -->
+            <div class="lg:hidden">
+                <button type="button" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded" onclick="toggleMenu()">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- JavaScript for Toggling the Mobile Menu -->
+            <script>
+                function toggleMenu() {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                        mobileMenu.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Disable scrolling
+                    } else {
+                        mobileMenu.style.display = 'none';
+                        document.body.style.overflow = ''; // Re-enable scrolling
+                    }
+                }
+            </script>
+            
+
+    <div class="relative isolate px-6 pt-0 lg:px-8 bg-gray-100">
+        <!-- Background Image -->
+        <div class="absolute inset-0 -z-20">
+            <img src="#" alt="Background" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Background Overlay with Animation -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+            <div id="animated-bg" class="absolute w-full h-full bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 transition-transform duration-500 ease-in-out"></div>
+        </div>
+    
+        <!-- Content Section -->
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 relative z-10">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    "Dirgahayu Replubik Indonesia: "<em>Nusantara Baru Indonesia Maju</em>
+                    <a href="https://www.setneg.go.id/view/index/peringatan_hari_ulang_tahun_ke_79_kemerdekaan_republik_indonesia_tahun_2024" class="font-semibold text-indigo-600">
+                        <span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h1 id="typing-text" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"></h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah Kabupaten Demak.</p>
+            </div>
+            
+            <script>
+                const textToType = "Guyub rukun mbangun Demak.";
+                const typingSpeed = 100; // milliseconds per character
+                const pauseBetweenLoops = 2000; // milliseconds before restarting
+            
+                let i = 0;
+                let typingElement = document.getElementById("typing-text");
+            
+                function typeText() {
+                    if (i < textToType.length) {
+                        typingElement.innerHTML += textToType.charAt(i);
+                        i++;
+                        setTimeout(typeText, typingSpeed);
+                    } else {
+                        setTimeout(resetText, pauseBetweenLoops);
+                    }
+                }
+            
+                function resetText() {
+                    i = 0;
+                    typingElement.innerHTML = "";
+                    setTimeout(typeText, typingSpeed);
+                }
+            
+                // Start the typing effect
+                typeText();
+            </script>
+            
+            
+        </div>
+    
+        <!-- Bottom Overlay -->
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+    </div>
+    
+    
+        
+        <div class="bg-white from-indigo-500 via-purple-500 to-pink-500 py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl sm:text-center">
+                    <h2 class="text-4xl font-extrabold tracking-tight text-black sm:text-5xl">Dokumen</h2>
+                </div>
+                
+                <!-- Baris pertama dengan 3 kolom -->
+                <div class="mt-16 grid gap-8 sm:mt-20 lg:grid-cols-3">
+                    <!-- Column 1 -->
+                    <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600">
+                        <div class="mx-auto max-w-xs px-8">
+                            <p class="text-xl font-semibold text-indigo-600">RPJPD</p>
+                            <p class="mt-6 text-sm leading-5 text-gray-600">Rencana Pembangunan Jangka Panjang Daerah</p>
+                            <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600">
+                        <div class="mx-auto max-w-xs px-8">
+                            <p class="text-xl font-semibold text-indigo-600">RPJMD</p>
+                            <p class="mt-6 text-sm leading-5 text-gray-600">Rencana Pembangunan Jangka Menengah Daerah</p>
+                            <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600">
+                        <div class="mx-auto max-w-xs px-8">
+                            <p class="text-xl font-semibold text-indigo-600">RKPD</p>
+                            <p class="mt-6 text-sm leading-5 text-gray-600">Rencana Kerja Pemerintahan Daerah</p>
+                            <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Baris kedua dengan 3 kolom -->
+                <div class="mt-8 grid gap-8 lg:grid-cols-3">
+                    <!-- Column 4 -->
+                    <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600">
+                        <div class="mx-auto max-w-xs px-8">
+                            <p class="text-xl font-semibold text-indigo-600">Renstra PD</p>
+                            <p class="mt-6 text-sm leading-5 text-gray-600">Rencana Strategis Perangkat Daerah</p>
+                            <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                        </div>
+                    </div>
+                    <!-- Column 5 -->
+                    <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600">
+                        <div class="mx-auto max-w-xs px-8">
+                            <p class="text-xl font-semibold text-indigo-600">Renja PD</p>
+                            <p class="mt-6 text-sm leading-5 text-gray-600">Rencana Kerja Perangkat Daerah</p>
+                            <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-white dark:bg-gray-900 py-12">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <!-- Modified Title -->
+                        <h1 class="text-4xl font-extrabold text-indigo-600 lg:text-5xl dark:text-pink-400 animate-text-color">
+                            BERITA
+                        </h1>
+                        <!-- Modified Subtitle -->
+                        <p class="max-w-xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300 animate-text-move">
+                            Akses lebih lanjut untuk berita, panduan, dan pembaruan terbaru.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+                        <!-- Article 1 -->
+                        <article class="relative overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Article Image" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="relative bg-gradient-to-t from-gray-900/60 to-transparent pt-32 sm:pt-48 lg:pt-64 transition-opacity duration-300 hover:bg-gradient-to-t from-gray-900/80 to-transparent">
+                                <div class="p-6">
+                                    <time datetime="2022-10-10" class="block text-xs text-white/90">10th Oct 2022</time>
+                                    <a href="#" class="block mt-2">
+                                        <h3 class="text-xl font-semibold text-white transition-colors duration-300 hover:text-yellow-300">How to position your furniture for positivity</h3>
+                                    </a>
+                                    <p class="mt-2 text-sm text-white/90">
+                                        Learn how the right placement of furniture can create a positive atmosphere in your living space.
+                                    </p>
+                                    <a href="#" class="inline-block mt-4 text-sm text-yellow-300 transition-opacity duration-300 opacity-0 hover:opacity-100">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+            
+                        <!-- Article 2 -->
+                        <article class="relative overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80" alt="Article Image" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="relative bg-gradient-to-t from-gray-900/60 to-transparent pt-32 sm:pt-48 lg:pt-64 transition-opacity duration-300 hover:bg-gradient-to-t from-gray-900/80 to-transparent">
+                                <div class="p-6">
+                                    <time datetime="2022-11-11" class="block text-xs text-white/90">11th Nov 2022</time>
+                                    <a href="#" class="block mt-2">
+                                        <h3 class="text-xl font-semibold text-white transition-colors duration-300 hover:text-yellow-300">Tips for creating a modern workspace</h3>
+                                    </a>
+                                    <p class="mt-2 text-sm text-white/90">
+                                        Explore the best strategies to design a modern and productive workspace.
+                                    </p>
+                                    <a href="#" class="inline-block mt-4 text-sm text-yellow-300 transition-opacity duration-300 opacity-0 hover:opacity-100">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+            
+                        <!-- Article 3 -->
+                        <article class="relative overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80" alt="Article Image" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="relative bg-gradient-to-t from-gray-900/60 to-transparent pt-32 sm:pt-48 lg:pt-64 transition-opacity duration-300 hover:bg-gradient-to-t from-gray-900/80 to-transparent">
+                                <div class="p-6">
+                                    <time datetime="2022-12-12" class="block text-xs text-white/90">12th Dec 2022</time>
+                                    <a href="#" class="block mt-2">
+                                        <h3 class="text-xl font-semibold text-white transition-colors duration-300 hover:text-yellow-300">Top trends in interior design for 2022</h3>
+                                    </a>
+                                    <p class="mt-2 text-sm text-white/90">
+                                        Stay ahead with the latest trends in interior design for 2022.
+                                    </p>
+                                    <a href="#" class="inline-block mt-4 text-sm text-yellow-300 transition-opacity duration-300 opacity-0 hover:opacity-100">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+            
+                        <!-- Additional articles can follow the same structure -->
+            
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="/news" class="inline-block px-8 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring">
+                            Berita Selengkapnya
+                        </a>
+                    </div>
+                </div>
+            
+            <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+                <div class="absolute inset-0 -z-10 overflow-hidden">
+                    <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+                        <defs>
+                            <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                                <path d="M100 200V.5M.5 .5H200" fill="none" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+                    </svg>
+                </div>
+                <div class="mx-auto max-w-2xl lg:max-w-none lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center">
+                    <!-- Text Section -->
+                    <div class="lg:col-start-1 lg:mx-auto lg:max-w-lg lg:px-8">
+                        <p class="text-base font-semibold leading-7 text-indigo-600">Profil</p>
+                        <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">TENTANG BAPPELITBANGDA</h1>
+                        <p class="mt-6 text-xl leading-8 text-gray-700">Bappelitbangda bertugas membantu Bupati melaksanakan fungsi penunjang urusan pemerintahan bidang perencanaan pembangunan, penelitian dan pengembangan yang menjadi kewenangan daerah Kabupaten Demak.</p>
+                        
+                        <!-- Centered Button -->
+                        <div class="mt-8 flex justify-center">
+                            <a href="https://www.setneg.go.id/view/index/peringatan_hari_ulang_tahun_ke_79_kemerdekaan_republik_indonesia_tahun_2024" class="relative inline-block text-indigo-600 font-semibold text-lg py-3 px-6 rounded-lg bg-indigo-100 hover:bg-indigo-200 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105">
+                                <span class="absolute inset-0 rounded-lg bg-indigo-200 opacity-50" aria-hidden="true"></span>
+                                Kenali kami
+                                <span aria-hidden="true"> &rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Section -->
+                    <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+                        <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="asset\grup.png" alt="">
+                    </div>
+                </div>
+            </div>
+            
+         <!-- Tailwind CSS Keyframes for Animation -->
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    /* Animation classes */
+    .animate-fadeInUp {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .bg-animated-gradient {
+        background: linear-gradient(90deg, #4f46e5, #d946ef, #ec4899, #8b5cf6);
+        background-size: 300% 300%;
+        animation: gradientMove 8s ease infinite;
+    }
+    </style>
+    
+    <!-- HTML Structure -->
+    <div class="bg-white py-24 sm:py-11 bg-gradient-to-tr">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl sm:text-center animate-fadeInUp">
+                <p class="mt-6 text-lg leading-8 text-gray-600">PRANALA TERKAIT</p>
+                <h2 class="text-4xl font-extrabold tracking-tight text-black sm:text-5xl">Akses lebih lanjut.</h2>
+            </div>
+            
+            <!-- Baris pertama dengan 4 kolom -->
+            <div class="mt-16 grid gap-8 sm:mt-20 lg:grid-cols-4">
+                <!-- Column 1 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-200">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">TJSLP</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Tanggung jawab solusi dan lingkungan perusahaan</p>
+                        <a href="https://tjslp.demakkab.go.id/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-400">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">Satu Data Demak</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Portal data resmi Pemerintah Kabupaten Demak</p>
+                        <a href="https://satudata.demakkab.go.id/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-600">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">BPS Kab.Demak</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Badan Pusat Statistik Kabupaten Demak</p>
+                        <a href="https://demakkab.bps.go.id/id" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+                <!-- Column 4 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-800">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">IGA</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Innovation Government Award kemendagri</p>
+                        <a href="https://indeks.inovasi.bskdn.kemendagri.go.id/v2/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Baris kedua dengan 4 kolom -->
+            <div class="mt-8 grid gap-8 lg:grid-cols-4">
+                <!-- Column 5 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-200">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">Pemkab Demak</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Situs web resmi Pemerintahan Kabupaten Demak</p>
+                        <a href="https://demakkab.go.id/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+                <!-- Column 6 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-400">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">MIPP</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Mall informasi pelayanan publik Kabupaten Demak</p>
+                        <a href="https://mipp.demakkab.go.id/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+                <!-- Column 7 -->
+                <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-600">
+                    <div class="mx-auto max-w-xs px-8">
+                        <p class="text-xl font-semibold text-indigo-600">SIPD RI</p>
+                        <p class="mt-6 text-sm leading-5 text-gray-600">Sistem informasi pemerintahan daerah</p>
+                        <a href="https://sipd-ri.kemendagri.go.id/auth/login" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                    </div>
+                </div>
+
+                            <!-- Column 8 -->
+            <div class="transform transition-transform hover:scale-105 rounded-2xl bg-white py-10 text-center shadow-lg ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center hover:shadow-2xl hover:ring-indigo-600 animate-fadeInUp delay-800">
+                <div class="mx-auto max-w-xs px-8">
+                    <p class="text-xl font-semibold text-indigo-600">e-Lakip</p>
+                    <p class="mt-6 text-sm leading-5 text-gray-600">Sistem laporan akuntabilitas kinerja instansi pemerintah</p>
+                    <a href="https://elakip.demakkab.go.id/" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Intersection Observer -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fadeInUp');
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
+            }
+        });
+    });
+
+    const columns = document.querySelectorAll('.animate-fadeInUp');
+    columns.forEach(column => observer.observe(column));
+});
+</script>
+
+<!-- Tailwind CSS Keyframes for Animation -->
+<style>
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    /* Gradient animation class */
+    .bg-animated-gradient {
+        background: linear-gradient(90deg, #4f46e5, #d946ef, #ec4899, #8b5cf6);
+        background-size: 300% 300%;
+        animation: gradientMove 8s ease infinite;
+    }
+    </style>
+    
+    <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<footer class="bg-white dark:">
+    <div class="container p-6 mx-auto">
+        <div class="lg:flex">
+            <div class="w-full -mx-6 lg:w-2/5">
+                <div class="px-6">
+                    <a href="#">
+                        <img class="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+                    </a>
+
+                    <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
+                        Join 31,000+ others and never miss out on new tips, tutorials, and more.
+                    </p>
+
+                    <div class="flex mt-6 -mx-2">
+                        <!-- Social Icons -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <!-- Footer Links Columns -->
+                </div>
+            </div>
+
+            <!-- New Smaller Image Columns Section -->
+            <div class="mt-6 lg:mt-0 lg:w-1/4">
+                <div class="grid grid-cols-2 gap-2">
+                    <!-- Top Row of Images -->
+                    <div>
+                        <img class="w-full h-auto" src="asset\demlog.png" alt="Image 1">
+                    </div>
+                    <div>
+                        <img class="w-full h-auto" src="asset\dmk21.jpg" alt="Image 2">
+                    </div>
+                    <!-- Bottom Row of Images -->
+                    <div>
+                        <img class="w-full h-auto" src="https://via.placeholder.com/100" alt="Image 3">
+                    </div>
+                    <div>
+                        <img class="w-full h-auto" src="https://via.placeholder.com/100" alt="Image 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+
+        <div>
+            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+         <!-- Link to the JavaScript file -->
+         <script src="web.js"></script>
+</body>
+</html>
